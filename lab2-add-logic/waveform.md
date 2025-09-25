@@ -30,10 +30,8 @@ Each test case is applied for 10 ns. For each case, two images are provided:
 * **COOL = 1, HEAT = 0**
 * **Expected: A_C_ON = 1, FURNACE_ON = 0**
 
-**Signal values:**
-![Values Case 2](../images/case2_values.png)
+**Signal values+waveform:**
 
-**Waveform:**
 ![Waveform Case 2](../images/case2_waveform.png)
 
 ---
@@ -46,10 +44,8 @@ Each test case is applied for 10 ns. For each case, two images are provided:
 * **COOL = 0, HEAT = 0**
 * **Expected: A_C_ON = 0, FURNACE_ON = 0**
 
-**Signal values:**
-![Values Case 3](../images/case3_values.png)
+**Signal values+waveform:**
 
-**Waveform:**
 ![Waveform Case 3](../images/case3_waveform.png)
 
 ---
@@ -62,10 +58,8 @@ Each test case is applied for 10 ns. For each case, two images are provided:
 * **COOL = 1, HEAT = 1**
 * **Expected: A_C_ON = 0, FURNACE_ON = 1**
 
-**Signal values:**
-![Values Case 4](../images/case4_values.png)
+**Signal values+waveform:**
 
-**Waveform:**
 ![Waveform Case 4](../images/case4_waveform.png)
 
 ---
@@ -78,16 +72,8 @@ Each test case is applied for 10 ns. For each case, two images are provided:
 * **COOL = 1, HEAT = 1**
 * **Expected: A_C_ON = 0, FURNACE_ON = 0**
 
-**Signal values:**
-![Values Case 5](../images/case5_values.png)
+**Signal values+waveform:**
 
-**Waveform:**
 ![Waveform Case 5](../images/case5_waveform.png)
 
 ---
-
-👉 You just need to replace each `![Values Case X]` and `![Waveform Case X]` with the **real screenshots** you save in your `images` folder.
-
----
-
-Do you want me to also make you a **file naming convention** for your screenshots (like `case1_values.png`, `case1_waveform.png`, etc.) so everything stays super organized in GitHub?
