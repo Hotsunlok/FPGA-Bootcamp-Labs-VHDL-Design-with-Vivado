@@ -16,10 +16,8 @@ Each test case is applied for 10 ns. For each case, two images are provided:
 * **COOL = 0, HEAT = 1**
 * **Expected: A_C_ON = 0, FURNACE_ON = 1**
 
-**Signal values:**
-![Values Case 1](../images/case1_values.png)
+**Signal values+waveform:**
 
-**Waveform:**
 ![Waveform Case 1](../images/case1_waveform.png)
 
 ---
