@@ -18,7 +18,7 @@ Each test case is applied for 10 ns. For each case, two images are provided:
 
 **Signal values+waveform:**
 
-![Waveform Case 1](../images/case1_waveform.png)
+![Waveform Case 1](../images/lab2case1_waveform.png)
 
 ---
 
