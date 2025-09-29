@@ -46,3 +46,59 @@ This structure makes the circuit behave in a fully synchronous way:
 
 ![Registered Thermostat](../images/register_all.png)
 
+Nice 👌 you’ve got the diagrams to make the README super clear.
+We can structure this part of **Lab 3 README** like this:
+
+---
+
+## Design Structure
+
+To make the system easier to understand, we can break it into **three main parts**, each responsible for one function of the thermostat.
+
+### Part 1 – Temperature Display Path
+
+* Inputs: `CURRENT_TEMP`, `DESIRED_TEMP`, `DISPLAY_SELECT`
+* Each input is first registered into internal signals:
+
+  * `INT_CURRENT_TEMP`
+  * `INT_DESIRED_TEMP`
+  * `INT_DISPLAY_SELECT`
+* Combinational logic selects between current or desired temperature.
+* The selected value (`INT_TEMP_DISPLAY`) is then stored into an output flip-flop → `TEMP_DISPLAY`.
+
+ ![Temperature Display Path](../images/first_path.jpg)
+
+---
+
+### Part 2 – Air Conditioner Path
+
+* Inputs: `CURRENT_TEMP`, `DESIRED_TEMP`, `COOL`
+* Registered into internal signals:
+
+  * `INT_CURRENT_TEMP`
+  * `INT_DESIRED_TEMP`
+  * `INT_COOL`
+* Combinational logic decides if A/C should turn on.
+* Result (`INT_A_C_ON`) is stored into an output flip-flop → `A_C_ON`.
+
+ ![Air Conditioner Path](../images/second_path.jpg)
+
+---
+
+### Part 3 – Furnace Path
+
+* Inputs: `CURRENT_TEMP`, `DESIRED_TEMP`, `HEAT`
+* Registered into internal signals:
+
+  * `INT_CURRENT_TEMP`
+  * `INT_DESIRED_TEMP`
+  * `INT_HEAT`
+* Combinational logic decides if Furnace should turn on.
+* Result (`INT_FURNACE_ON`) is stored into an output flip-flop → `FURNACE_ON`.
+
+ ![Furnace Pathh](../images/third_path.jpg)
+
+---
+
+👉 This makes it clear that **every path** follows the same principle:
+**Inputs → Flip-Flops → Combinational Logic → Flip-Flops → Outputs**
