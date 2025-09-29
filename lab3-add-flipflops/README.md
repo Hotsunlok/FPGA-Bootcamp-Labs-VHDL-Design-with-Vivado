@@ -23,10 +23,6 @@ This behavior allows flip-flops to **synchronize signals** and **prevent glitche
 ![D Flip-Flop Diagram](../images/flipflop.png)
 
 ---
-Got it 👍 you want to describe the **mission of Lab 3** clearly in your README, using simple words but still technical enough. I’ll phrase it for you in the same style as Lab 2:
-
----
-
 ## Mission – Register Inputs and Outputs
 
 In this lab, the goal is to **register all inputs and outputs** of the thermostat design.
