@@ -46,9 +46,6 @@ This structure makes the circuit behave in a fully synchronous way:
 
 ![Registered Thermostat](../images/register_all.png)
 
-Nice 👌 you’ve got the diagrams to make the README super clear.
-We can structure this part of **Lab 3 README** like this:
-
 ---
 
 ## Design Structure
