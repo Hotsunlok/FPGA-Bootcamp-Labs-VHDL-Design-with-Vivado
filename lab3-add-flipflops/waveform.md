@@ -231,6 +231,8 @@ FURNACE_ON   = 0         (combinational = 1, but flip-flop still holds old 0)
 ---
 # At 45 ns
 
+![45ns rising edge](../images/45ns_rising_edge.png)
+
 At 45 ns, the **clock has a rising edge**.
 `RESET = 1`, so flip-flops behave **normally**.
 
