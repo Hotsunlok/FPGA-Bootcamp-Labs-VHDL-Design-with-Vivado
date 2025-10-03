@@ -28,7 +28,7 @@ This means:
 The Lab 4 thermostat system adds two new input signals (`FURNACE_HOT`, `AC_READY`) and one new output (`FAN_ON`).  
 These signals extend the Lab 3 design and allow us to implement the finite state machine (FSM).  
 
-![Lab 4 Component Diagram](images/lab4_component.png)
+![Lab 4 Component Diagram](../images/lab4_component.png)
 
 In this lab, we extend the thermostat design with:
 
@@ -66,7 +66,7 @@ The FSM has 7 states:
 
 Transitions are determined by the conditions on `CURRENT_TEMP`, `DESIRED_TEMP`, `HEAT`, `COOL`, `FURNACE_HOT`, and `AC_READY`.
 
-![Lab 4 State Diagram](images/lab4_fsm.png)
+![Lab 4 State Diagram](../images/lab4_fsm.png)
 
 ---
 
