@@ -43,3 +43,36 @@ This allows the fan (`FAN_ON`) to continue running for a short cool-down period 
 The state diagram below shows the extended FSM with countdown behavior for both A/C and Furnace control:
 
 ![Lab 5 State Diagram](../images/lab5statediagram.png)
+---
+### 🧮 Implementation of Countdown Function
+
+To implement the **countdown behavior** for both the Air Conditioner (A/C) and Furnace, two functions were created inside the **`math_package`**:
+`AC_COUNTDOWN()` and `FN_COUNTDOWN()`.
+
+Each function takes the current counter value as input and subtracts 1 each clock cycle until it reaches 0.
+If the value is already 0, it stays at 0 to prevent negative values.
+
+```vhdl
+function AC_COUNTDOWN(curr_value : integer) return integer is
+    variable temp_ac : integer;
+begin
+    if curr_value > 0 then
+        temp_ac := curr_value - 1;
+    else
+        temp_ac := 0;
+    end if;
+    return temp_ac;
+end function;
+```
+
+In the main **thermostat design**, this function is called during the **ACDONE** state:
+
+* When entering `ACDONE` (transition from `ACNOWREADY` → `ACDONE`),
+  the counter is **loaded to 20**.
+* While remaining in `ACDONE`, the counter **decreases by 1** each rising clock edge.
+* When it finally reaches **0** and `AC_READY = '0'`,
+  the system transitions back to the **IDLE** state.
+
+The same idea is used for the **furnace side**, where the counter starts at **10** during the `FURNACECOOL` phase and decreases in the same way.
+
+---
