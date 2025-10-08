@@ -109,3 +109,54 @@ Failure:  Simulation finished, System returned to IDLE
 ![Simulation Finished](../images/simulationfinished.png)
 
 ---
+## 🧩 Assert Reports for Checking Expected Results
+
+To make the testbench easier to understand and verify, we also added several **assert-report statements** that describe what the system is expected to do at specific clock edges (e.g., 5 ns, 25 ns, 35 ns, 55 ns, 265 ns).
+
+Each `assert false … severity note;` line prints a descriptive message to the simulation console — reminding the user which **state**, **A/C**, **furnace**, **fan**, and **countdown** values should appear in the waveform at that exact moment.
+
+This helps the reader quickly confirm whether the simulated waveform matches the expected behavior without scrolling through signals manually.
+
+Example assert statements used:
+
+```vhdl
+-- IDLE (initial)
+assert false
+report "At time 5ns IDLE state, AC=OFF, Furnace=OFF, Fan=OFF"
+severity note;
+
+-- COOLON
+assert false
+report "At time 25ns COOLON state, AC=ON, Furnace=OFF, Fan=OFF"
+severity note;
+
+-- ACNOWREADY
+assert false
+report "At time " & time'image(now) &
+       "  ACNOWREADY state, AC=ON, Furnace=OFF, Fan=ON ,countdown_ac=20 "
+severity note;
+
+-- ACDONE
+assert false
+report "At time 55ns ACDONE state, AC=OFF, Furnace=OFF, Fan=ON ,countdown_ac=19 "
+severity note;
+
+-- Return to IDLE
+assert false
+report "At time " & time'image(now) &
+       "  IDLE state, AC=OFF, Furnace=OFF, Fan=OFF ,countdown_ac=0 "
+severity note;
+```
+
+🧠 **Purpose:**
+These assert messages act like built-in documentation during simulation.
+They describe each transition clearly:
+
+* Which **state** the thermostat is currently in
+* Whether the **air conditioner, furnace, and fan** are ON or OFF
+* What the **countdown timer** value is supposed to be
+
+📸 Each message corresponds to a known **waveform event**, helping the user compare actual and expected behavior easily.
+
+![Assert_Reports](../images/assert_reports_55ns.png)
+---
